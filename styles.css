@@ -1,0 +1,25 @@
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    font-size: 6rem;
+}
+
+#enterNumberText {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 6rem;
+    text-align: center;
+}
+
+input {
+    display: block;
+    width: 50%;
+    height: 25%;
+    padding: 1rem 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    box-sizing: border-box;
+}
