@@ -2,14 +2,15 @@ h1 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     text-align: center;
-    font-size: 6rem;
+    font-size: 3rem;
 }
 
 #enterNumberText {
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
-    font-size: 6rem;
+    font-size: 3rem;
     text-align: center;
+    margin-bottom: 0.5rem;
 }
 
 input {
@@ -22,4 +23,6 @@ input {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     box-sizing: border-box;
+    text-align: center;
+    font-size: 1rem;
 }

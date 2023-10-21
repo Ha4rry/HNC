@@ -2,20 +2,30 @@ function isDecimal(num) {
     return (num % 1 != 0);
 }
 
+
 function isHappy() {
     let happy = false;
     let triedNums = [];
     let allowCalculate = true;
     let rawNumberInput = document.getElementById("numberInput").value;  
     let number = 0;
-    if (((String(rawNumberInput)).toLowerCase()).includes("e")) {
-        allowCalculate = false;
-    }
-    if (parseFloat(rawNumberInput)<0) {
-        allowCalculate = false;
-    }
 
-    if (isDecimal(parseFloat(rawNumberInput))) {
+    if (rawNumberInput.includes("e")) {
+        allowCalculate = false;
+    }
+    else if (rawNumberInput.includes("+")) {
+        allowCalculate = false;
+    }
+    else if (Number(rawNumberInput)<0) {
+        allowCalculate = false;
+    }
+    else if (rawNumberInput.includes("-")) {
+        allowCalculate = false;
+    }
+    else if (isDecimal(Number(rawNumberInput))) {
+        allowCalculate = false;
+    }
+    else if (rawNumberInput.includes('.')) {
         allowCalculate = false;
     }
     else {
@@ -63,19 +73,28 @@ function isHappy() {
         doCalc(number);
     }
     else if (!allowCalculate) {
-        if (((String(rawNumberInput)).toLowerCase()).includes("e")) {
+        if (rawNumberInput.includes("e")) {
             alert("Exponentials are not supported (yet)!");
+        }
+        else if (rawNumberInput.includes("+")) {
+            alert("Addition not supported.");
         }
         else if (Number(rawNumberInput)<0) {
             alert("Negative numbers are not supported!");
         }
+        else if (rawNumberInput.includes("-")) {
+            alert("Subtraction is not supported.");
+        }
         else if (isDecimal(Number(rawNumberInput))) {
             alert("Decimals are not supported!");
         }
-    }
-    else {
-        alert("ERROR: INVALID INPUT ERROR")
-    }
+        else if (rawNumberInput.includes(".")) {
+            alert('Invalid character entered: ".", Decimals are not supported, Please try again.');
+        }
+        }
+        else {
+        alert("ERROR: INVALID INPUT ERROR");
+        }
     
 };
 
