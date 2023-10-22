@@ -1,6 +1,7 @@
 function isDecimal(num) {
     return (num % 1 != 0);
 }
+         
 
 
 function isCharIn(char, str, lowercase) { // use lowercase for only text, use none if checking specifically for symbols
@@ -25,12 +26,16 @@ function isCharIn(char, str, lowercase) { // use lowercase for only text, use no
     }
 }
 
+let prevNumber = 0;
+
+
 function isHappy() {
     let happyOrSadText = document.querySelector("#happyNumText");
     let happy = false;
     let triedNums = [];
     let allowCalculate = true;
     let rawNumberInput = document.getElementById("numberInput").value;  
+    document.getElementById("numberInput").value = document.getElementById("numberInput").value;
     let number = 0;
 
     if (rawNumberInput == "") {
@@ -67,6 +72,7 @@ function isHappy() {
         if (isHappyTrueOrFalse) {  
             console.log(triedNums);  
             happyOrSadText.textContent = `That's a Happy Number!` 
+            prevNumber = num;
         }
         else {
             console.log(triedNums);
@@ -118,7 +124,7 @@ function isHappy() {
             happyOrSadText.textContent = `Decimals aren't supported!`
         }
         else if (isCharIn(".", rawNumberInput, false)) {
-            happyOrSadText.textContent = `Invalid character entered: ".", Decimals are not supported!`
+            happyOrSadText.textContent = `Invalid character entered: "."`
         }
         }
         else {
@@ -126,6 +132,14 @@ function isHappy() {
         }
     
 };
+
+
+function isNumberKey(evt) {
+    var charCode = (evt.which) ? evt.which : evt.keyCode
+    if (charCode > 31 && (charCode < 48 || charCode > 57))
+      return false;
+    return true;
+}
 
 let btn = document.getElementById('isHappyButton');
    

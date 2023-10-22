@@ -15,7 +15,7 @@
 <body>
     <h1>Happy Number Checker</h1>
     <div id="enterNumberText">Enter Number:</div>
-    <div><input type="number" min="0" id="numberInput" name="numberInput" onchange onpropertychange onkeyuponpaste oninput="isHappy()"/></div> 
+    <div><input type="text" min="0" id="numberInput" name="numberInput" onchange onpropertychange onkeyuponpaste oninput="isHappy()" onkeypress="return isNumberKey(event)"/></div> 
     <div id="happyNumText">Happy or Sad?</div>
     <input type="button" id="isHappyButton" value="Check" onclick="isHappy()"/>  
 </body>
