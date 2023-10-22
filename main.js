@@ -2,6 +2,7 @@ function isDecimal(num) {
     return (num % 1 != 0);
 }
 
+
 function isCharIn(char, str, lowercase) { // use lowercase for only text, use none if checking specifically for symbols
     let isIn = false;
     if (lowercase == true) {
@@ -99,7 +100,7 @@ function isHappy() {
     else if (!allowCalculate) {
         if (rawNumberInput == "") {
             happyOrSadText.textContent = `Please try again!` 
-            alert('INPUT ERROR: This may be caused by leaving the textbox blank, attempting addition or subtraction. Also by entering random characters! e.g. "--", "1-"')   
+            // alert('INPUT ERROR: This may be caused by leaving the textbox blank, attempting addition or subtraction. Also by entering random characters! e.g. "--", "1-"')   
         }
         else if (isCharIn("e", rawNumberInput, true)) {
             happyOrSadText.textContent = `Please try again!`
