@@ -35,7 +35,6 @@ function isHappy() {
     let triedNums = [];
     let allowCalculate = true;
     let rawNumberInput = document.getElementById("numberInput").value;  
-    document.getElementById("numberInput").value = document.getElementById("numberInput").value;
     let number = 0;
 
     if (rawNumberInput == "") {
