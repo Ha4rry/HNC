@@ -99,32 +99,26 @@ function isHappy() {
     }
     else if (!allowCalculate) {
         if (rawNumberInput == "") {
-            happyOrSadText.textContent = `Please try again!` 
+            happyOrSadText.textContent = `Happy or Sad?` 
             // alert('INPUT ERROR: This may be caused by leaving the textbox blank, attempting addition or subtraction. Also by entering random characters! e.g. "--", "1-"')   
         }
         else if (isCharIn("e", rawNumberInput, true)) {
-            happyOrSadText.textContent = `Please try again!`
-            alert("Exponentials are not supported (yet)!");
+            happyOrSadText.textContent = `Exponentials aren't supported!`
         }
         else if (isCharIn("+", rawNumberInput, false)) { 
-            happyOrSadText.textContent = `Please try again!`
-            alert("Addition not supported.");
+            happyOrSadText.textContent = `Addition isn't supported!`
         }
         else if (Number(rawNumberInput)<0) {
-            happyOrSadText.textContent = `Please try again!`
-            alert("Negative numbers are not supported!");
+            happyOrSadText.textContent = `Negative numbers aren't supported!`
         }
         else if (isCharIn("-", rawNumberInput, false)) {
-            happyOrSadText.textContent = `Please try again!`
-            alert("Subtraction is not supported.");
+            happyOrSadText.textContent = `Subtraction isn't supported!`
         }
         else if (isDecimal(Number(rawNumberInput))) {
-            happyOrSadText.textContent = `Please try again!`
-            alert("Decimals are not supported!");
+            happyOrSadText.textContent = `Decimals aren't supported!`
         }
         else if (isCharIn(".", rawNumberInput, false)) {
-            happyOrSadText.textContent = `Please try again!`
-            alert('Invalid character entered: ".", Decimals are not supported, Please try again.');
+            happyOrSadText.textContent = `Invalid character entered: ".", Decimals are not supported!`
         }
         }
         else {
