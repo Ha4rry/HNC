@@ -25,6 +25,7 @@ function isCharIn(char, str, lowercase) { // use lowercase for only text, use no
 }
 
 function isHappy() {
+    let happyNumText = document.querySelector("#happyNumText");
     let happy = false;
     let triedNums = [];
     let allowCalculate = true;
@@ -59,36 +60,35 @@ function isHappy() {
 
 
     let digits = [];
-    let squaredNum = 0;
+    let totalOfSquaredDigits = 0;
     function exit(num, isHappyTrueOrFalse) {
+        happyOrSadText = document.querySelector("#happyNumText");
         if (isHappyTrueOrFalse) {  
             console.log(triedNums);  
-            alert(`${num} is a happy number!`)
-
+            happyOrSadText.textContent = `That's a Happy Number!` 
         }
         else {
             console.log(triedNums);
-            alert(`${num} is a sad number...`)
-            
+            happyOrSadText.textContent = `That's a Sad Number!`
         }
     }
     function doCalc(num) {
-        squaredNum = 0;
+        totalOfSquaredDigits = 0;
         for (let i = 0; i < num.length; i++) {
-            squaredNum = squaredNum + Math.pow(num.charAt(i), 2);
+            totalOfSquaredDigits = totalOfSquaredDigits + Math.pow(num.charAt(i), 2);
         }
-        if (triedNums.includes(squaredNum)) {
+        if (triedNums.includes(totalOfSquaredDigits)) {
             happy = false;
             exit(number, happy);
         }
-        else if (squaredNum == 1) {
+        else if (totalOfSquaredDigits == 1) {
             happy = true;
             exit(number, happy);
         }
         else {
-            console.log(squaredNum)
-            triedNums.push(squaredNum)
-            doCalc(String(squaredNum));
+            console.log(totalOfSquaredDigits)
+            triedNums.push(totalOfSquaredDigits)
+            doCalc(String(totalOfSquaredDigits));
         }
         
     
@@ -98,24 +98,31 @@ function isHappy() {
     }
     else if (!allowCalculate) {
         if (rawNumberInput == "") {
-            alert('INPUT ERROR: This may be caused by attempting addition or subtraction. Also by entering random characters! e.g. "--", "1-"')   
+            happyOrSadText.textContent = `Please try again!` 
+            alert('INPUT ERROR: This may be caused by leaving the textbox blank, attempting addition or subtraction. Also by entering random characters! e.g. "--", "1-"')   
         }
         else if (isCharIn("e", rawNumberInput, true)) {
+            happyOrSadText.textContent = `Please try again!`
             alert("Exponentials are not supported (yet)!");
         }
         else if (isCharIn("+", rawNumberInput, false)) { 
+            happyOrSadText.textContent = `Please try again!`
             alert("Addition not supported.");
         }
         else if (Number(rawNumberInput)<0) {
+            happyOrSadText.textContent = `Please try again!`
             alert("Negative numbers are not supported!");
         }
         else if (isCharIn("-", rawNumberInput, false)) {
+            happyOrSadText.textContent = `Please try again!`
             alert("Subtraction is not supported.");
         }
         else if (isDecimal(Number(rawNumberInput))) {
+            happyOrSadText.textContent = `Please try again!`
             alert("Decimals are not supported!");
         }
         else if (isCharIn(".", rawNumberInput, false)) {
+            happyOrSadText.textContent = `Please try again!`
             alert('Invalid character entered: ".", Decimals are not supported, Please try again.');
         }
         }

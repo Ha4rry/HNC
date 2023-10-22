@@ -1,22 +1,30 @@
+body {
+    background-color: #bec5d1;
+}
+
 h1 {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
+    font-weight: 600;
     text-align: center;
     font-size: 3rem;
+    height: 3em;
+    text-decoration: underline;
 }
+
 
 #enterNumberText {
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 3rem;
     text-align: center;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.5em;
+    height: 2em;
 }
 
 input {
     display: block;
-    width: 50%;
-    height: 25%;
+    width: 75%;
+    height: 30%;
     padding: 1rem 1rem;
     margin-left: auto;
     margin-right: auto;
@@ -24,5 +32,53 @@ input {
     margin-bottom: 0.5rem;
     box-sizing: border-box;
     text-align: center;
-    font-size: 1rem;
+    font-size: 2em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+#numberInput {
+    border-color:#4b4d4d;
+    background-image: url('img/pink2orangeGRAD.png');
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 20px;
+    font-size: 3em;
+}
+#isHappyButton {
+   font-size:3em;
+   background-color: #34f996;
+   margin-top: 2.5rem;
+   border-radius: 25px;
+   border-width:8px;
+   border-style:double;
+   border-color:#2be95b;
+   font-family: 'Nunito', sans-serif;;
+}
+
+#happyNumText {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 2.25rem;
+    text-align: center;
+    margin-bottom: 1.5em;
+    margin-top:0.5em;
+    height: 2.5rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#numInHappyNumText {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 2.25rem;
+    text-align: center;
+    margin-bottom: 1.5em;
+    margin-top:0.5em;
+    height: 2.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: fit-content;
+    width: fit-content;
 }
