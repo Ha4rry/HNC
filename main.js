@@ -1,7 +1,22 @@
-let version = "2.5";
+let version = "2.55";
 
 function isDecimal(num) {
     return (num % 1 != 0);
+}
+
+function changeGradient(id, happyOrSadOrInvalid) {
+
+    if (happyOrSadOrInvalid == "happy") {
+        document.getElementById(id).style.background="linear-gradient(0.25turn, #04f608, #8ffe8f)";
+    }
+    if (happyOrSadOrInvalid == "sad") {
+        document.getElementById(id).style.background="linear-gradient(0.25turn, #2623cd, #7d7aff)";
+    }
+    if (happyOrSadOrInvalid == "invalid") {
+        document.getElementById(id).style.background="linear-gradient(0.25turn, rgb(255,255,0), rgb(255,0,223)";
+    }
+    
+
 }
          
 
@@ -73,13 +88,12 @@ function isHappy() {
         happyOrSadText = document.querySelector("#happyNumText");
         if (isHappyTrueOrFalse) {  
             console.log(triedNums);  
-            document.getElementById('numberInput').style.background="linear-gradient(0.25turn, #04f608, #8ffe8f)";
+            changeGradient('numberInput', "happy");
             happyOrSadText.textContent = `That's a Happy Number!` 
-            prevNumber = num;
         }
         else {
             console.log(triedNums);
-            document.getElementById('numberInput').style.background="linear-gradient(0.25turn, #2623cd, #7d7aff)";
+            changeGradient('numberInput', "sad");
             happyOrSadText.textContent = `That's a Sad Number!`
         }
     }
@@ -109,26 +123,32 @@ function isHappy() {
     }
     else if (!allowCalculate) {
         if (rawNumberInput == "") {
-            document.getElementById('numberInput').style.background="linear-gradient(0.25turn, rgb(255,255,0), rgb(255,0,223)";
+            changeGradient('numberInput', "invalid");
             happyOrSadText.textContent = `Please enter a number.` 
             // alert('INPUT ERROR: This may be caused by leaving the textbox blank, attempting addition or subtraction. Also by entering random characters! e.g. "--", "1-"')   
         }
         else if (isCharIn("e", rawNumberInput, true)) {
+            changeGradient('numberInput', "invalid");
             happyOrSadText.textContent = `Exponentials aren't supported!`
         }
         else if (isCharIn("+", rawNumberInput, false)) { 
+            changeGradient('numberInput', "invalid");
             happyOrSadText.textContent = `Addition isn't supported!`
         }
         else if (Number(rawNumberInput)<0) {
+            changeGradient('numberInput', "invalid");
             happyOrSadText.textContent = `Negative numbers aren't supported!`
         }
         else if (isCharIn("-", rawNumberInput, false)) {
+            changeGradient('numberInput', "invalid");
             happyOrSadText.textContent = `Subtraction isn't supported!`
         }
         else if (isDecimal(Number(rawNumberInput))) {
+            changeGradient('numberInput', "invalid");
             happyOrSadText.textContent = `Decimals aren't supported!`
         }
         else if (isCharIn(".", rawNumberInput, false)) {
+            changeGradient('numberInput', "invalid");
             happyOrSadText.textContent = `Invalid character entered: "."`
         }
         }
