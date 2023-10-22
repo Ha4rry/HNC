@@ -25,7 +25,7 @@ function isCharIn(char, str, lowercase) { // use lowercase for only text, use no
 }
 
 function isHappy() {
-    let happyNumText = document.querySelector("#happyNumText");
+    let happyOrSadText = document.querySelector("#happyNumText");
     let happy = false;
     let triedNums = [];
     let allowCalculate = true;
