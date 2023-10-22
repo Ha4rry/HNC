@@ -104,7 +104,7 @@ function isHappy() {
     }
     else if (!allowCalculate) {
         if (rawNumberInput == "") {
-            happyOrSadText.textContent = `Happy or Sad?` 
+            happyOrSadText.textContent = `Please enter a number.` 
             // alert('INPUT ERROR: This may be caused by leaving the textbox blank, attempting addition or subtraction. Also by entering random characters! e.g. "--", "1-"')   
         }
         else if (isCharIn("e", rawNumberInput, true)) {
