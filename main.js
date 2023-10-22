@@ -1,8 +1,9 @@
+let version = "2.5";
+
 function isDecimal(num) {
     return (num % 1 != 0);
 }
          
-
 
 function isCharIn(char, str, lowercase) { // use lowercase for only text, use none if checking specifically for symbols
     let isIn = false;
@@ -26,7 +27,9 @@ function isCharIn(char, str, lowercase) { // use lowercase for only text, use no
     }
 }
 
-let prevNumber = 0;
+function changeTitleForVersion() {
+    document.querySelector("#titleText").textContent = `Happy Number Checker v${version}`;
+}
 
 
 function isHappy() {
@@ -70,11 +73,13 @@ function isHappy() {
         happyOrSadText = document.querySelector("#happyNumText");
         if (isHappyTrueOrFalse) {  
             console.log(triedNums);  
+            document.getElementById('numberInput').style.background="linear-gradient(0.25turn, #04f608, #8ffe8f)";
             happyOrSadText.textContent = `That's a Happy Number!` 
             prevNumber = num;
         }
         else {
             console.log(triedNums);
+            document.getElementById('numberInput').style.background="linear-gradient(0.25turn, #2623cd, #7d7aff)";
             happyOrSadText.textContent = `That's a Sad Number!`
         }
     }
@@ -104,6 +109,7 @@ function isHappy() {
     }
     else if (!allowCalculate) {
         if (rawNumberInput == "") {
+            document.getElementById('numberInput').style.background="linear-gradient(0.25turn, rgb(255,255,0), rgb(255,0,223)";
             happyOrSadText.textContent = `Please enter a number.` 
             // alert('INPUT ERROR: This may be caused by leaving the textbox blank, attempting addition or subtraction. Also by entering random characters! e.g. "--", "1-"')   
         }
@@ -148,3 +154,8 @@ document.addEventListener('keypress', (event)=>{
   }
     
 });
+
+
+
+
+

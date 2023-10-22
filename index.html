@@ -12,8 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
     <script src='main.js'></script>
 </head>
-<body>
-    <h1>Happy Number Checker</h1>
+<body onload="changeTitleForVersion()">
+    <h1 id="titleText">Happy Number Checker</h1>
     <div id="enterNumberText">Enter Number:</div>
     <div><input type="number" min="0" id="numberInput" name="numberInput" onchange onpropertychange onkeyuponpaste oninput="isHappy()" onkeypress="return isNumberKey(event)"/></div> 
     <div id="happyNumText">Happy or Sad?</div>
