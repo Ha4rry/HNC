@@ -6,8 +6,7 @@ h1 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     text-align: center;
-    font-size: 3rem;
-    height: 3em;
+    font-size: 2.5rem;
     text-decoration: underline;
 }
 
@@ -59,7 +58,7 @@ input {
 #happyNumText {
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
-    font-size: 2.25rem;
+    font-size: 350%;
     text-align: center;
     margin-bottom: 1.5em;
     margin-top:0.5em;
