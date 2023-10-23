@@ -1,4 +1,4 @@
-let version = "2.55";
+let version = "2.56";
 
 function isDecimal(num) {
     return (num % 1 != 0);
