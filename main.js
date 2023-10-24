@@ -1,4 +1,4 @@
-let version = "2.56";
+let version = "2.57";
 
 function isDecimal(num) {
     return (num % 1 != 0);
@@ -43,7 +43,7 @@ function isCharIn(char, str, lowercase) { // use lowercase for only text, use no
 }
 
 function changeTitleForVersion() {
-    document.querySelector("#titleText").textContent = `Happy Number Checker v${version}`;
+    document.querySelector("#versionText").textContent = ` v${version}`;
 }
 
 
@@ -166,14 +166,14 @@ function isNumberKey(evt) {
     return true;
 }
 
-let btn = document.getElementById('isHappyButton');
+// let btn = document.getElementById('isHappyButton');
    
-document.addEventListener('keypress', (event)=>{
-  if(event.key === 'Enter') {
-    isHappy();
-  }
+// document.addEventListener('keypress', (event)=>{
+//   if(event.key === 'Enter') {
+//     isHappy();
+//   }
     
-});
+// });
 
 
 

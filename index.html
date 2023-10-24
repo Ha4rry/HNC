@@ -13,7 +13,7 @@
     <script src='main.js'></script>
 </head>
 <body onload="changeTitleForVersion()">
-    <h1 id="titleText">Happy Number Checker</h1>
+    <h1 id="titleText">Happy Number Checker<span id="versionText"></span></h1>
     <div id="enterNumberText">Enter Number:</div>
     <div><input type="number" min="0" id="numberInput" name="numberInput" placeholder="Enter number here..." onchange onpropertychange onkeyuponpaste oninput="isHappy()" onkeypress="return isNumberKey(event)"/></div> 
     <div id="happyNumText">Happy or Sad?</div>
