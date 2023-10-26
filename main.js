@@ -1,4 +1,4 @@
-let version = "2.57";
+let version = "2.58";
 
 function isDecimal(num) {
     return (num % 1 != 0);
@@ -94,7 +94,7 @@ function isHappy() {
         else {
             console.log(triedNums);
             changeGradient('numberInput', "sad");
-            happyOrSadText.textContent = `That's a Sad Number!`
+            happyOrSadText.textContent = `That's a Sad Number...`
         }
     }
     function doCalc(num) {
